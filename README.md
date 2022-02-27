@@ -58,16 +58,19 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Logical Details below
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+login/sign up module using random otp
 
-## Stay in touch
+** Sign up logic ** METHOD : POST User enters email , phone and name Already existing user check if not existed proceed ahead ** OTP GENERATION**
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+randomly generating otp while signup
 
-## License
+**OTP verification and sign up is done using the same api **
 
+if body has otp value it goes for verification on successfull verfication , user is registered
+
+** Login logic**
+
+user enter phone or email check if user exist or not if yes randomly otp is generated if otp is matched , token is returned else bad request error is thrown
 Nest is [MIT licensed](LICENSE).
