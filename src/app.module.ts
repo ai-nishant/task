@@ -9,6 +9,7 @@ import { UserModule } from './modules/user/user.module';
 import { LogsModule } from './modules/logs/logs.module';
 import { User } from './modules/user/model/user';
 import { Logs } from './modules/logs/model/otplog';
+import { SessionmanagerModule } from './modules/sessionmanager/sessionmanager.module';
 const envConfig = dotenv.config().parsed;
 @Module({
   imports: [AuthModule, TypeOrmModule.forRoot({
@@ -21,7 +22,7 @@ const envConfig = dotenv.config().parsed;
    entities:[User,Logs],
    synchronize: true,
    logging:false
-  }), UserModule, LogsModule],
+  }), UserModule, LogsModule, SessionmanagerModule],
   controllers: [AppController],
   providers: [AppService],
 })
